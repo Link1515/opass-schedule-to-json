@@ -1,4 +1,3 @@
-import type { Room } from '../types/Room'
 import type { SessionType } from '../types/SessionType'
 
 const sessionTypeDefaults = {
