@@ -1,6 +1,6 @@
 import type { Session } from '../types/Session'
 
-const sessionDefault = {
+const sessionDefaults = {
   id: '',
   type: '',
   room: '',
@@ -25,7 +25,7 @@ export function normalizeSessions(rawSessions: Record<string, string>[]): Sessio
 
   rawSessions.splice(0, 1)
   return rawSessions.map(rawSession => {
-    const { id, type, room, broadcast, start, end, qa, slide, co_write, live, record, language, uri, title_zh, title_en, description_zh, description_en } = { ...sessionDefault, ...rawSession }
+    const { id, type, room, broadcast, start, end, qa, slide, co_write, live, record, language, uri, title_zh, title_en, description_zh, description_en } = { ...sessionDefaults, ...rawSession }
 
     const zh = {
       title: title_zh,
