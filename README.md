@@ -1,15 +1,10 @@
-# tt
+# opass-schedule-to-json
 
-To install dependencies:
+### Example
 
-```bash
-bun install
+```typescript
+const schedule = await scheduleToJson({
+  apiKey: '<your-api-key>',
+  spreadsheetId: '<your-spreadsheet-id>'
+})
 ```
-
-To run:
-
-```bash
-bun run index.ts
-```
-
-This project was created using `bun init` in bun v1.3.6. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
