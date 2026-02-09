@@ -38,15 +38,19 @@ export function normalizeSessions(rawSessions: Record<string, string>[]): Sessio
 
     const speakers: string[] = []
     for (let i = 1; ; i++) {
-      const cur = rawSession[`speaker${i}id`]
-      if (!cur) break
+      const key = `speaker${i}id`
+      if (!Object.hasOwn(rawSession, key)) break
+      const cur = rawSession[key]
+      if (!cur) continue
       speakers.push(cur)
     }
 
     const tags: string[] = []
     for (let i = 1; ; i++) {
-      const cur = rawSession[`tag${i}`]
-      if (!cur) break
+      const key = `tag${i}`
+      if (!Object.hasOwn(rawSession, key)) break
+      const cur = rawSession[key]
+      if (!cur) continue
       tags.push(cur)
     }
 
