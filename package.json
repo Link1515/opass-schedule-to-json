@@ -1,8 +1,29 @@
 {
   "name": "opass-schedule-to-json",
-  "module": "index.ts",
-  "author": "Terry",
+  "version": "1.0.0",
+  "author": "Terry <terrylin1515@gmail.com>",
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/cjs/index.cjs",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.cjs"
+    }
+  },
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build:esm": "bun build index.ts --format=esm --outfile=dist/esm/index.js",
+    "build:cjs": "bun build index.ts --format=cjs --outfile=dist/cjs/index.cjs",
+    "build:types": "tsc -p tsconfig.types.json",
+    "build": "bun run clean && bun run build:esm && bun run build:cjs && bun run build:types",
+    "prepublishOnly": "bun run build"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
