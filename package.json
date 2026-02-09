@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "author": "Terry <terrylin1515@gmail.com>",
   "type": "module",
+  "license": "MIT",
   "files": [
     "dist"
   ],
