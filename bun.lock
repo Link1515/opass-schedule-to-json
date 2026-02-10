@@ -9,6 +9,7 @@
       },
       "devDependencies": {
         "@types/bun": "latest",
+        "prettier": "^3.8.1",
       },
       "peerDependencies": {
         "typescript": "^5",
@@ -27,6 +28,8 @@
     "google-spreadsheet": ["google-spreadsheet@5.0.2", "", { "dependencies": { "es-toolkit": "^1.39.8", "ky": "^1.8.2" }, "peerDependencies": { "google-auth-library": ">=8.8.0" }, "optionalPeers": ["google-auth-library"] }, "sha512-8ugGYGsy6BLl6d4z2zwllEv8hFB2IVcCNAUYT/seo4DU7Pk6m79qv+qRxE2cE8bxbf4S13T5fzrjcPhbk2ogsw=="],
 
     "ky": ["ky@1.14.3", "", {}, "sha512-9zy9lkjac+TR1c2tG+mkNSVlyOpInnWdSMiue4F+kq8TwJSgv6o8jhLRg8Ho6SnZ9wOYUq/yozts9qQCfk7bIw=="],
+
+    "prettier": ["prettier@3.8.1", "", { "bin": { "prettier": "bin/prettier.cjs" } }, "sha512-UOnG6LftzbdaHZcKoPFtOcCKztrQ57WkHDeRD9t/PTQtmT0NHSeWWepj6pS0z/N7+08BHFDQVUrfmfMRcZwbMg=="],
 
     "typescript": ["typescript@5.9.3", "", { "bin": { "tsc": "bin/tsc", "tsserver": "bin/tsserver" } }, "sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw=="],
 
