@@ -8,7 +8,7 @@ const sessionTypeDefaults = {
   description_en: '',
 }
 
-export function normalizeSessionTypes(rawSessionTypes: Record<string, string>[]): SessionType[] {
+export function normalizeSessionTypes(rawSessionTypes: Record<string, string>[] = []): SessionType[] {
   if (rawSessionTypes.length === 0) return []
 
   return rawSessionTypes.map(sessionType => {

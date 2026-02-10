@@ -8,7 +8,7 @@ const tagDefaults = {
   description_en: '',
 }
 
-export function normalizeTags(rawTags: Record<string, string>[]): Tag[] {
+export function normalizeTags(rawTags: Record<string, string>[] = []): Tag[] {
   if (rawTags.length === 0) return []
 
   return rawTags.map(rawTag => {

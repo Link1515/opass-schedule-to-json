@@ -16,10 +16,10 @@ export async function scheduleToJson({ apiKey, spreadsheetId, avatarBaseUrl, def
   const rawSchedule = await sheetsToJson({ apiKey, spreadsheetId })
 
   return {
-    sessions: normalizeSessions(rawSchedule['Session'] ?? []),
-    speakers: normalizeSpeakers(rawSchedule['Speaker'] ?? [], avatarBaseUrl, defaultAvatar),
-    rooms: normalizeRooms(rawSchedule['Room'] ?? []),
-    session_types: normalizeSessionTypes(rawSchedule['SessionType'] ?? []),
-    tags: normalizeTags(rawSchedule['Tag'] ?? []),
+    sessions: normalizeSessions(rawSchedule['Session']),
+    speakers: normalizeSpeakers(rawSchedule['Speaker'], avatarBaseUrl, defaultAvatar),
+    rooms: normalizeRooms(rawSchedule['Room']),
+    session_types: normalizeSessionTypes(rawSchedule['SessionType']),
+    tags: normalizeTags(rawSchedule['Tag']),
   }
 }

@@ -20,7 +20,7 @@ const sessionDefaults = {
   description_en: '',
 }
 
-export function normalizeSessions(rawSessions: Record<string, string>[]): Session[] {
+export function normalizeSessions(rawSessions: Record<string, string>[] = []): Session[] {
   if (rawSessions.length === 0) return []
 
   rawSessions.splice(0, 1)

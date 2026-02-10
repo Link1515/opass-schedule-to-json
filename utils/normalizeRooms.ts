@@ -8,7 +8,7 @@ const roomDefaults = {
   description_en: '',
 }
 
-export function normalizeRooms(rawRooms: Record<string, string>[]): Room[] {
+export function normalizeRooms(rawRooms: Record<string, string>[] = []): Room[] {
   if (rawRooms.length === 0) return []
 
   return rawRooms.map(rawRoom => {

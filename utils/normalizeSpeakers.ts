@@ -9,7 +9,7 @@ const speakerDefaults = {
   bio_en: '',
 }
 
-export function normalizeSpeakers(rawSpeakers: Record<string, string>[], avatarBaseUrl: string, defaultAvatar: string): Speaker[] {
+export function normalizeSpeakers(rawSpeakers: Record<string, string>[] = [], avatarBaseUrl: string, defaultAvatar: string): Speaker[] {
   if (rawSpeakers.length === 0) return []
 
   rawSpeakers.splice(0, 1)
