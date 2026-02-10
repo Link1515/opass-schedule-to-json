@@ -6,6 +6,7 @@ out
 dist
 *.tgz
 schedule.json
+rawSchedule.json
 
 # code coverage
 coverage
