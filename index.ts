@@ -1,9 +1,9 @@
-import { sheetsToJson } from './utils/sheetsToJson'
-import { normalizeSessions } from './utils/normalizeSessions'
-import { normalizeSpeakers } from './utils/normalizeSpeakers'
-import { normalizeRooms } from './utils/normalizeRooms'
-import { normalizeSessionTypes } from './utils/normalizeSessionTypes'
-import { normalizeTags } from './utils/normalizeTags'
+import { sheetsToJson } from '~/utils/sheetsToJson'
+import { normalizeSessions } from '~/utils/normalizeSessions'
+import { normalizeSpeakers } from '~/utils/normalizeSpeakers'
+import { normalizeRooms } from '~/utils/normalizeRooms'
+import { normalizeSessionTypes } from '~/utils/normalizeSessionTypes'
+import { normalizeTags } from '~/utils/normalizeTags'
 
 interface Config {
   apiKey: string

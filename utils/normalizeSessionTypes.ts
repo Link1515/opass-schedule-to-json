@@ -1,4 +1,4 @@
-import type { SessionType } from '../types/SessionType'
+import type { SessionType } from '~/types/SessionType'
 
 const sessionTypeDefaults = {
   id: '',

@@ -1,4 +1,4 @@
-import type { Speaker } from '../types/Speaker'
+import type { Speaker } from '~/types/Speaker'
 
 const speakerDefaults = {
   id: '',

@@ -1,4 +1,4 @@
-import type { Room } from '../types/Room'
+import type { Room } from '~/types/Room'
 
 const roomDefaults = {
   id: '',
