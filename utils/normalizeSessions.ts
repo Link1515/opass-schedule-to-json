@@ -17,7 +17,7 @@ const sessionDefaults = {
   title_zh: '',
   title_en: '',
   description_zh: '',
-  description_en: ''
+  description_en: '',
 }
 
 export function normalizeSessions(rawSessions: Record<string, string>[]): Session[] {
@@ -29,11 +29,11 @@ export function normalizeSessions(rawSessions: Record<string, string>[]): Sessio
 
     const zh = {
       title: title_zh,
-      description: description_zh
+      description: description_zh,
     }
     const en = {
       title: title_en,
-      description: description_en
+      description: description_en,
     }
 
     const speakers: string[] = []

@@ -5,7 +5,7 @@ const roomDefaults = {
   name_zh: '',
   name_en: '',
   description_zh: '',
-  description_en: ''
+  description_en: '',
 }
 
 export function normalizeRooms(rawRooms: Record<string, string>[]): Room[] {
@@ -15,11 +15,11 @@ export function normalizeRooms(rawRooms: Record<string, string>[]): Room[] {
     const { id, name_zh, name_en, description_zh, description_en } = { ...roomDefaults, ...rawRoom }
     const zh = {
       name: name_zh,
-      description: description_zh
+      description: description_zh,
     }
     const en = {
       name: name_en,
-      description: description_en
+      description: description_en,
     }
 
     return { id, zh, en }

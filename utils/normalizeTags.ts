@@ -5,7 +5,7 @@ const tagDefaults = {
   name_zh: '',
   name_en: '',
   description_zh: '',
-  description_en: ''
+  description_en: '',
 }
 
 export function normalizeTags(rawTags: Record<string, string>[]): Tag[] {
@@ -15,11 +15,11 @@ export function normalizeTags(rawTags: Record<string, string>[]): Tag[] {
     const { id, name_zh, name_en, description_zh, description_en } = { ...tagDefaults, ...rawTag }
     const zh = {
       name: name_zh,
-      description: description_zh
+      description: description_zh,
     }
     const en = {
       name: name_en,
-      description: description_en
+      description: description_en,
     }
 
     return { id, zh, en }

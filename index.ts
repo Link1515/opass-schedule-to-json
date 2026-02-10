@@ -18,6 +18,6 @@ export async function scheduleToJson({ apiKey, spreadsheetId }: Config) {
     speakers: normalizeSpeakers(rawSchedule['Speaker'] ?? []),
     rooms: normalizeRooms(rawSchedule['Room'] ?? []),
     session_types: normalizeSessionTypes(rawSchedule['SessionType'] ?? []),
-    tags: normalizeTags(rawSchedule['Tag'] ?? [])
+    tags: normalizeTags(rawSchedule['Tag'] ?? []),
   }
 }

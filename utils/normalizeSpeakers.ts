@@ -6,7 +6,7 @@ const speakerDefaults = {
   name_en: '',
   avatar: '',
   bio_zh: '',
-  bio_en: ''
+  bio_en: '',
 }
 
 export function normalizeSpeakers(rawSpeakers: Record<string, string>[]): Speaker[] {
@@ -17,11 +17,11 @@ export function normalizeSpeakers(rawSpeakers: Record<string, string>[]): Speake
     const { id, name_zh, name_en, avatar, bio_zh, bio_en } = { ...speakerDefaults, ...rawSpeaker }
     const zh = {
       name: name_zh,
-      bio: bio_zh
+      bio: bio_zh,
     }
     const en = {
       name: name_en,
-      bio: bio_en
+      bio: bio_en,
     }
 
     return { id, avatar, zh, en }

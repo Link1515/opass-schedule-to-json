@@ -5,7 +5,7 @@ const sessionTypeDefaults = {
   name_zh: '',
   name_en: '',
   description_zh: '',
-  description_en: ''
+  description_en: '',
 }
 
 export function normalizeSessionTypes(rawSessionTypes: Record<string, string>[]): SessionType[] {
@@ -15,11 +15,11 @@ export function normalizeSessionTypes(rawSessionTypes: Record<string, string>[])
     const { id, name_zh, name_en, description_zh, description_en } = { ...sessionTypeDefaults, ...sessionType }
     const zh = {
       name: name_zh,
-      description: description_zh
+      description: description_zh,
     }
     const en = {
       name: name_en,
-      description: description_en
+      description: description_en,
     }
 
     return { id, zh, en }
