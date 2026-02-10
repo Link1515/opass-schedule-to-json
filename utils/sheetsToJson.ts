@@ -9,17 +9,21 @@ export async function sheetsToJson({ apiKey, spreadsheetId }: Config) {
   const doc = new GoogleSpreadsheet(spreadsheetId, { apiKey })
   await doc.loadInfo()
 
-  const json: Record<string, Record<string, string>[]> = {}
-  for (const sheet of doc.sheetsByIndex) {
-    const rows = await sheet.getRows()
-    json[sheet.title] = rows.map(row => {
-      const obj = row.toObject()
-      for (const key of Object.keys(obj)) {
-        if (obj[key] === undefined) obj[key] = ''
-      }
-      return obj
-    })
-  }
+  const entries: [string, Record<string, string>[]][] = await Promise.all(
+    doc.sheetsByIndex.map(async sheet => {
+      const rows = await sheet.getRows()
 
-  return json
+      const data = rows.map(row => {
+        const obj = row.toObject()
+        for (const key of Object.keys(obj)) {
+          if (obj[key] === undefined) obj[key] = ''
+        }
+        return obj
+      })
+
+      return [sheet.title, data]
+    })
+  )
+
+  return Object.fromEntries(entries)
 }
