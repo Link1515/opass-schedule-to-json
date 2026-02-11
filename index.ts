@@ -8,8 +8,8 @@ import { normalizeTags } from '~/utils/normalizeTags'
 interface Config {
   apiKey: string
   spreadsheetId: string
-  avatarBaseUrl: string
-  defaultAvatar: string
+  avatarBaseUrl?: string
+  defaultAvatar?: string
 }
 
 export async function scheduleToJson({ apiKey, spreadsheetId, avatarBaseUrl, defaultAvatar }: Config) {

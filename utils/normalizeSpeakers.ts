@@ -9,14 +9,14 @@ const speakerDefaults = {
   bio_en: '',
 }
 
-export function normalizeSpeakers(rawSpeakers: Record<string, string>[] = [], avatarBaseUrl: string, defaultAvatar: string): Speaker[] {
+export function normalizeSpeakers(rawSpeakers: Record<string, string>[] = [], avatarBaseUrl: string = '', defaultAvatar: string = ''): Speaker[] {
   if (rawSpeakers.length === 0) return []
 
   rawSpeakers.splice(0, 1)
   return rawSpeakers.map(rawSpeaker => {
     const { id, name_zh, name_en, avatar, bio_zh, bio_en } = { ...speakerDefaults, ...rawSpeaker }
 
-    avatarBaseUrl = avatarBaseUrl.endsWith('/') ? avatarBaseUrl : `${avatarBaseUrl}/`
+    avatarBaseUrl = avatarBaseUrl.endsWith('/') || avatarBaseUrl === '' ? avatarBaseUrl : `${avatarBaseUrl}/`
     const formattedAvatar = avatar ? `${avatarBaseUrl}${avatar}` : defaultAvatar
     const zh = {
       name: name_zh,
