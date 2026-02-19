@@ -1,5 +1,11 @@
 # opass-schedule-to-json
 
+### Install
+
+```
+npm i opass-schedule-to-json
+```
+
 ### Example
 
 ```typescript
