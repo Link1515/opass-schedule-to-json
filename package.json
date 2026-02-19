@@ -4,6 +4,10 @@
   "author": "Terry <terrylin1515@gmail.com>",
   "type": "module",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Link1515/opass-schedule-to-json.git"
+  },
   "files": [
     "dist"
   ],
