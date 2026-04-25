@@ -21,8 +21,8 @@ describe('normalizeSessionTypes()', () => {
     ]
 
     expect(normalizeSessionTypes(raw)).toEqual([
-      { id: '1', zh: { name: '活動 1', description: '活動 1 說明' }, en: { name: '', description: '' } },
-      { id: '2', zh: { name: '', description: '' }, en: { name: 'Event 2', description: 'Event 2 description' } },
+      { id: '1', zh: { name: '活動 1', description: '活動 1 說明' }, en: { name: null, description: null } },
+      { id: '2', zh: { name: null, description: null }, en: { name: 'Event 2', description: 'Event 2 description' } },
     ])
   })
 
@@ -33,8 +33,8 @@ describe('normalizeSessionTypes()', () => {
     ]
 
     expect(normalizeSessionTypes(raw)).toEqual([
-      { id: '1', zh: { name: '活動 1', description: '活動 1 說明' }, en: { name: '', description: '' } },
-      { id: '2', zh: { name: '', description: '' }, en: { name: 'Event 2', description: 'Event 2 description' } },
+      { id: '1', zh: { name: '活動 1', description: '活動 1 說明' }, en: { name: null, description: null } },
+      { id: '2', zh: { name: null, description: null }, en: { name: 'Event 2', description: 'Event 2 description' } },
     ])
   })
 
