@@ -28,8 +28,8 @@ describe('normalizeSpeakers()', () => {
     ]
 
     expect(normalizeSpeakers(raw)).toEqual([
-      { id: 'zh-1', avatar: 'speaker_1.jpg', zh: { name: '講者 1', bio: '講者 1 的簡介' }, en: { name: null, bio: null } },
-      { id: 'zh-2', avatar: 'speaker_2.jpg', zh: { name: null, bio: null }, en: { name: 'Speaker 2', bio: 'Speaker 2 bio' } },
+      { id: 'zh-1', avatar: 'speaker_1.jpg', zh: { name: '講者 1', bio: '講者 1 的簡介' }, en: { name: '', bio: '' } },
+      { id: 'zh-2', avatar: 'speaker_2.jpg', zh: { name: '', bio: '' }, en: { name: 'Speaker 2', bio: 'Speaker 2 bio' } },
     ])
   })
 
@@ -41,8 +41,8 @@ describe('normalizeSpeakers()', () => {
     ]
 
     expect(normalizeSpeakers(raw)).toEqual([
-      { id: 'zh-1', avatar: 'speaker_1.jpg', zh: { name: '講者 1', bio: '講者 1 的簡介' }, en: { name: null, bio: null } },
-      { id: 'zh-2', avatar: 'speaker_2.jpg', zh: { name: null, bio: null }, en: { name: 'Speaker 2', bio: 'Speaker 2 bio' } },
+      { id: 'zh-1', avatar: 'speaker_1.jpg', zh: { name: '講者 1', bio: '講者 1 的簡介' }, en: { name: '', bio: '' } },
+      { id: 'zh-2', avatar: 'speaker_2.jpg', zh: { name: '', bio: '' }, en: { name: 'Speaker 2', bio: 'Speaker 2 bio' } },
     ])
   })
 

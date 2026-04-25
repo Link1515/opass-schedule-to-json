@@ -32,12 +32,12 @@ export function normalizeSessions(rawSessions: Record<string, string>[] = []): S
     const { id, type, room, broadcast, start, end, qa, slide, co_write, live, record, language, uri, title_zh, title_en, description_zh, description_en } = session
 
     const zh = {
-      title: title_zh,
-      description: description_zh,
+      title: title_zh ?? '',
+      description: description_zh ?? '',
     }
     const en = {
-      title: title_en,
-      description: description_en,
+      title: title_en ?? '',
+      description: description_en ?? '',
     }
 
     const speakers: string[] = []

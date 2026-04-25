@@ -205,8 +205,8 @@ describe('normalizeSessions()', () => {
           description: '這是第一個 Session',
         },
         en: {
-          title: null,
-          description: null,
+          title: '',
+          description: '',
         },
         speakers: ['zh-1'],
         tags: ['tag1'],
@@ -275,8 +275,8 @@ describe('normalizeSessions()', () => {
           description: '這是第一個 Session',
         },
         en: {
-          title: null,
-          description: null,
+          title: '',
+          description: '',
         },
         speakers: ['zh-1'],
         tags: ['tag1'],

@@ -21,8 +21,8 @@ describe('normalizeRooms()', () => {
     ]
 
     expect(normalizeRooms(raw)).toEqual([
-      { id: '1', zh: { name: '視聽教室 1', description: '視聽教室 1 描述' }, en: { name: null, description: null } },
-      { id: '2', zh: { name: null, description: null }, en: { name: 'Room 2', description: 'Room 2' } },
+      { id: '1', zh: { name: '視聽教室 1', description: '視聽教室 1 描述' }, en: { name: '', description: '' } },
+      { id: '2', zh: { name: '', description: '' }, en: { name: 'Room 2', description: 'Room 2' } },
     ])
   })
 
@@ -33,8 +33,8 @@ describe('normalizeRooms()', () => {
     ]
 
     expect(normalizeRooms(raw)).toEqual([
-      { id: '1', zh: { name: '視聽教室 1', description: '視聽教室 1 描述' }, en: { name: null, description: null } },
-      { id: '2', zh: { name: null, description: null }, en: { name: 'Room 2', description: 'Room 2' } },
+      { id: '1', zh: { name: '視聽教室 1', description: '視聽教室 1 描述' }, en: { name: '', description: '' } },
+      { id: '2', zh: { name: '', description: '' }, en: { name: 'Room 2', description: 'Room 2' } },
     ])
   })
 

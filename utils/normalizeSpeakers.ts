@@ -16,23 +16,21 @@ export function normalizeSpeakers(rawSpeakers: Record<string, string>[] = [], av
   return rawSpeakers.map(rawSpeaker => {
     const speaker = {
       ...speakerDefaults,
-      ...Object.fromEntries(
-        Object.entries(rawSpeaker).map(([key, value]) => [key, value === '' ? null : value]),
-      ),
+      ...Object.fromEntries(Object.entries(rawSpeaker).map(([key, value]) => [key, value === '' ? null : value])),
     }
     const { id, name_zh, name_en, avatar, bio_zh, bio_en } = speaker
 
     avatarBaseUrl = avatarBaseUrl.endsWith('/') || avatarBaseUrl === '' ? avatarBaseUrl : `${avatarBaseUrl}/`
     const formattedAvatar = avatar ? `${avatarBaseUrl}${avatar}` : defaultAvatar || null
     const zh = {
-      name: name_zh,
-      bio: bio_zh,
+      name: name_zh ?? '',
+      bio: bio_zh ?? '',
     }
     const en = {
-      name: name_en,
-      bio: bio_en,
+      name: name_en ?? '',
+      bio: bio_en ?? '',
     }
 
-    return { id, avatar: formattedAvatar, zh, en }
+    return { id, avatar: formattedAvatar ?? '', zh, en }
   })
 }
