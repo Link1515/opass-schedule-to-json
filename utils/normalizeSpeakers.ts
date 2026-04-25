@@ -1,12 +1,12 @@
 import type { Speaker } from '~/types/Speaker'
 
 const speakerDefaults = {
-  id: '',
-  name_zh: '',
-  name_en: '',
-  avatar: '',
-  bio_zh: '',
-  bio_en: '',
+  id: null,
+  name_zh: null,
+  name_en: null,
+  avatar: null,
+  bio_zh: null,
+  bio_en: null,
 }
 
 export function normalizeSpeakers(rawSpeakers: Record<string, string>[] = [], avatarBaseUrl: string = '', defaultAvatar: string = ''): Speaker[] {
@@ -14,10 +14,16 @@ export function normalizeSpeakers(rawSpeakers: Record<string, string>[] = [], av
 
   rawSpeakers.splice(0, 1)
   return rawSpeakers.map(rawSpeaker => {
-    const { id, name_zh, name_en, avatar, bio_zh, bio_en } = { ...speakerDefaults, ...rawSpeaker }
+    const speaker = {
+      ...speakerDefaults,
+      ...Object.fromEntries(
+        Object.entries(rawSpeaker).map(([key, value]) => [key, value === '' ? null : value]),
+      ),
+    }
+    const { id, name_zh, name_en, avatar, bio_zh, bio_en } = speaker
 
     avatarBaseUrl = avatarBaseUrl.endsWith('/') || avatarBaseUrl === '' ? avatarBaseUrl : `${avatarBaseUrl}/`
-    const formattedAvatar = avatar ? `${avatarBaseUrl}${avatar}` : defaultAvatar
+    const formattedAvatar = avatar ? `${avatarBaseUrl}${avatar}` : defaultAvatar || null
     const zh = {
       name: name_zh,
       bio: bio_zh,

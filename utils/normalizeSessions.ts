@@ -1,23 +1,23 @@
 import type { Session } from '~/types/Session'
 
 const sessionDefaults = {
-  id: '',
-  type: '',
-  room: '',
-  broadcast: '',
-  start: '',
-  end: '',
-  qa: '',
-  slide: '',
-  co_write: '',
-  live: '',
-  record: '',
-  language: '',
-  uri: '',
-  title_zh: '',
-  title_en: '',
-  description_zh: '',
-  description_en: '',
+  id: null,
+  type: null,
+  room: null,
+  broadcast: null,
+  start: null,
+  end: null,
+  qa: null,
+  slide: null,
+  co_write: null,
+  live: null,
+  record: null,
+  language: null,
+  uri: null,
+  title_zh: null,
+  title_en: null,
+  description_zh: null,
+  description_en: null,
 }
 
 export function normalizeSessions(rawSessions: Record<string, string>[] = []): Session[] {
@@ -25,7 +25,11 @@ export function normalizeSessions(rawSessions: Record<string, string>[] = []): S
 
   rawSessions.splice(0, 1)
   return rawSessions.map(rawSession => {
-    const { id, type, room, broadcast, start, end, qa, slide, co_write, live, record, language, uri, title_zh, title_en, description_zh, description_en } = { ...sessionDefaults, ...rawSession }
+    const session = {
+      ...sessionDefaults,
+      ...Object.fromEntries(Object.entries(rawSession).map(([key, value]) => [key, value === '' ? null : value])),
+    }
+    const { id, type, room, broadcast, start, end, qa, slide, co_write, live, record, language, uri, title_zh, title_en, description_zh, description_en } = session
 
     const zh = {
       title: title_zh,

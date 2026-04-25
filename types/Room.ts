@@ -1,10 +1,10 @@
 export interface Room {
-  id: string
+  id: string | null
   zh: NameAndDesc
   en: NameAndDesc
 }
 
 interface NameAndDesc {
-  name: string
-  description: string
+  name: string | null
+  description: string | null
 }

@@ -1,11 +1,11 @@
 export interface Speaker {
-  id: string
-  avatar: string
+  id: string | null
+  avatar: string | null
   zh: NameAndBio
   en: NameAndBio
 }
 
 interface NameAndBio {
-  name: string
-  bio: string
+  name: string | null
+  bio: string | null
 }
