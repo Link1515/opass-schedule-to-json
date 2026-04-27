@@ -1,6 +1,7 @@
 import type { SessionType } from '~/types/SessionType'
+import type { SessionTypeDefaults } from '~/types/SessionTypeDefaults'
 
-const sessionTypeDefaults = {
+const sessionTypeDefaults: SessionTypeDefaults = {
   id: null,
   name_zh: null,
   name_en: null,

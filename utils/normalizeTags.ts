@@ -1,6 +1,7 @@
 import type { Tag } from '~/types/Tag'
+import type { TagDefaults } from '~/types/TagDefaults'
 
-const tagDefaults = {
+const tagDefaults: TagDefaults = {
   id: null,
   name_zh: null,
   name_en: null,

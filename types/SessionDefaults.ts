@@ -1,0 +1,19 @@
+export interface SessionDefaults {
+  id: string | null
+  type: string | null
+  room: string | null
+  broadcast: string | null
+  start: string | null
+  end: string | null
+  qa: string | null
+  slide: string | null
+  co_write: string | null
+  live: string | null
+  record: string | null
+  language: string | null
+  uri: string | null
+  title_zh: string | null
+  title_en: string | null
+  description_zh: string | null
+  description_en: string | null
+}

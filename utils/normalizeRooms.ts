@@ -1,6 +1,7 @@
 import type { Room } from '~/types/Room'
+import type { RoomDefaults } from '~/types/RoomDefaults'
 
-const roomDefaults = {
+const roomDefaults: RoomDefaults = {
   id: null,
   name_zh: null,
   name_en: null,

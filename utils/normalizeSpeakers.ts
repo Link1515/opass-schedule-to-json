@@ -1,6 +1,7 @@
 import type { Speaker } from '~/types/Speaker'
+import type { SpeakerDefaults } from '~/types/SpeakerDefaults'
 
-const speakerDefaults = {
+const speakerDefaults: SpeakerDefaults = {
   id: null,
   name_zh: null,
   name_en: null,
