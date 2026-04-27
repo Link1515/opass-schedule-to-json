@@ -59,6 +59,13 @@ export function normalizeSessions(rawSessions: Record<string, string>[] = []): S
       tags.push(cur)
     }
 
-    return { id, type, room, broadcast, start, end, qa, slide, co_write, live, record, language, uri, zh, en, speakers, tags }
+    const broadcastArr = broadcast
+      ? broadcast
+          .split(',')
+          .map(item => item.trim())
+          .filter(Boolean)
+      : null
+
+    return { id, type, room, broadcast: broadcastArr, start, end, qa, slide, co_write, live, record, language, uri, zh, en, speakers, tags }
   })
 }

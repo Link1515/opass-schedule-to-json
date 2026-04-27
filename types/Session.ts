@@ -2,7 +2,7 @@ export interface Session {
   id: string | null
   type: string | null
   room: string | null
-  broadcast: string | null
+  broadcast: string[] | null
   start: string | null
   end: string | null
   qa: string | null
