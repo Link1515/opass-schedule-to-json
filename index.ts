@@ -6,14 +6,15 @@ import { normalizeSessionTypes } from '~/utils/normalizeSessionTypes'
 import { normalizeTags } from '~/utils/normalizeTags'
 
 interface Config {
-  apiKey: string
   spreadsheetId: string
   avatarBaseUrl?: string
   defaultAvatar?: string
 }
 
-export async function scheduleToJson({ apiKey, spreadsheetId, avatarBaseUrl, defaultAvatar }: Config) {
-  const rawSchedule = await sheetsToJson({ apiKey, spreadsheetId })
+export const opassSheetNames = ['Session', 'Speaker', 'Room', 'SessionType', 'Tag'] as const
+
+export async function scheduleToJson({ spreadsheetId, avatarBaseUrl, defaultAvatar }: Config) {
+  const rawSchedule = await sheetsToJson(spreadsheetId, opassSheetNames)
 
   return {
     sessions: normalizeSessions(rawSchedule['Session']),

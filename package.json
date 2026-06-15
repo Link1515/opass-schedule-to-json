@@ -37,6 +37,6 @@
     "typescript": "^5"
   },
   "dependencies": {
-    "google-spreadsheet": "^5.0.2"
+    "csv-parse": "^7.0.0"
   }
 }
